@@ -1,9 +1,9 @@
-for number in Array(0...10) {
-	print("The number is \(number)")
-}
+struct User {}
 
-let printNumber: (Int) -> Void = {
-	print("The number is \($0)")
-}
+class UserProvider {
+	let users = [User]()
 
-Array(0...10).forEach(printNumber)
+	func getUsers(_ process: (User) -> Void) {
+		users.forEach(process)
+	}
+}
